@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinLoseDisplay : MonoBehaviour
 {
     public GameObject DisplayBalls;
     public GameObject Personnage;
+    public GameObject WinMenuUI;
+    public GameObject LoseMenuUI;
 
     private GameObject[] balls;
     private int CountAllBalls;
@@ -15,6 +18,8 @@ public class WinLoseDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
+
         // get all ball with tag "Balls"
         balls = GameObject.FindGameObjectsWithTag("Balls");
         CountAllBalls = balls.Length;
@@ -44,43 +49,27 @@ public class WinLoseDisplay : MonoBehaviour
             // if _COLLECT_BALLS_ < _ALL_BALLS_/2 print lose
             if (BallsCollected < Mathf.Ceil(CountAllBalls/2f))
             {
-                Debug.Log("Lose");
+                Time.timeScale = 0;
+                LoseMenuUI.SetActive(true);
+            }else
+            {
+                Time.timeScale = 0;
+                WinMenuUI.SetActive(true);
             }
-            // Debug.Log(_COLLECT_BALLS_);
         }
         
     }
+
+
+
+    public void LoadMenu()
+    {
+        // load pause menu scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+    }
+    
+    public void Restart()
+    {
+        SceneManager.LoadScene("Game");
+    }
 }
-
-        // // get all balls 
-        // GameObject[] balls = GameObject.FindGameObjectsWithTag("Balls");
-
-        // // get with Me tag
-        // GameObject me = GameObject.FindGameObjectWithTag("Me");
-        
-
-        // // if Distance me and ball <= 2 delete ball
-        // foreach (GameObject ball in balls)
-        // {
-        //     if (Vector3.Distance(me.transform.position, ball.transform.position) <= 2)
-        //     {
-        //         // add 1 to _COLLECT_BALLS_
-        //         _COLLECT_BALLS_++;
-
-        //         // destroy ball
-        //         Destroy(ball);
-        //     }
-        // }
-
-       
-        
-
-        // if(balls.Length == 0)
-        // {
-        //     // if _COLLECT_BALLS_ < _ALL_BALLS_/2 print lose
-        //     if (_COLLECT_BALLS_ < Mathf.Ceil(_ALL_BALLS_/2f))
-        //     {
-        //         Debug.Log("Lose");
-        //     }
-        //     // Debug.Log(_COLLECT_BALLS_);
-        // }
