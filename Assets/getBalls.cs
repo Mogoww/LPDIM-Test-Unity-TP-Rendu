@@ -36,30 +36,7 @@ public class getBalls : MonoBehaviour
                 Destroy(ball);
             }
         }
-    
 
-        // if press a scale up with capsule collider
-        if (Input.GetKeyDown(KeyCode.G ))
-        {
-            // get capsule collider 
-            CapsuleCollider capsuleCollider = me.GetComponent<CapsuleCollider>();
-            // up Ground Check Distance
-            
-
-            // up height of capsule collider
-            capsuleCollider.height += 10f;
-            // ground check distance of capsule collider = 0.5f
-            // capsuleCollider.center = new Vector3(0, 10f, 0);
-
-            // get 
-
-            // // scale up
-            me.transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
-            // // scale heigth capsule collider
-            // me.GetComponent<Body Mesh>().height += 10f;
-            // me.GetComponent<CapsuleCollider>().radius += 0.4f;
-            // me.height += 10f;
-        }
        
         
 
