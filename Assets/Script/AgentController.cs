@@ -79,11 +79,6 @@ public class AgentController : MonoBehaviour
             target = targetTemporary;
         }
 
-        if(target != null)
-        {
-            print(target.name);    
-        }
-
         // if the agent touched the target delete the target
         if (target != null && Vector3.Distance(agentPosition, target.transform.position) < 2)
         {
