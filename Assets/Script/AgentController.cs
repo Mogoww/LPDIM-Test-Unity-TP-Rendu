@@ -83,7 +83,6 @@ public class AgentController : MonoBehaviour
         if (target != null && Vector3.Distance(agentPosition, target.transform.position) < 2)
         {
             
-
             Destroy(target.gameObject);
             target = null;
         }
