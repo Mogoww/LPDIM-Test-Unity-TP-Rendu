@@ -51,5 +51,13 @@ public class getBalls : MonoBehaviour
         }
 
 
+
+        // if press esc 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("PAUSE");
+        }
+
+
     }
 }
