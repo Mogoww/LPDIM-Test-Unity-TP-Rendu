@@ -53,6 +53,11 @@ public class MenuCustom : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public void GoToInformation()
+    {
+        SceneManager.LoadScene("Information");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
