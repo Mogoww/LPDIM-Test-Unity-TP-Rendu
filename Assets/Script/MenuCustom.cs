@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenuCustom : MonoBehaviour
+public class MenuCustom : MonoBehaviour
 {
 
     public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI;
+    public GameObject MenuUI;
 
 
     // Update is called once per frame
@@ -29,14 +29,14 @@ public class PauseMenuCustom : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+        MenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
 
     public void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        MenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
