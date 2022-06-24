@@ -7,108 +7,68 @@ public class AgentController : MonoBehaviour
     private Animator Anim;
     private UnityEngine.AI.NavMeshAgent agent;
     private Transform target;
-    private Transform targetTemporary;
     private Vector3 agentPosition;
-    // private Vector3 targetPosition;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         Anim = GetComponent<Animator>();   
-
         // call DetectAndChangeTarget function 
-        target = DetectAndChangeTarget(agent.transform.position);
+        target = DetectAndChangeTarget();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
-        if (target != null)
-        {
-            // get the target position
+        // if target is not null change the agent's destination to the target's position
+        if (target != null){
             agent.destination = target.position;
         }
-        // // get agent position
-        // agentPosition = agent.transform.position;
-
-        // // // select all tag "Balls"
-        // GameObject[] balls = GameObject.FindGameObjectsWithTag("Balls");
         
-        // if(target == null){
-        //     // for each ball in the array
-        //     foreach (GameObject ball in balls)
-        //     {
-        //         // get the ball position
-        //         targetPosition = ball.transform.position;
-        //         float distance = Vector3.Distance(targetPosition, agentPosition);
-        //         if (targetTemporary == null){
-        //             targetTemporary = ball.transform;
-        //         }
-        //         // if the ball is closer than the current target
-        //         if ( targetTemporary != null && (Vector3.Distance(agentPosition, targetTemporary.transform.position) > distance))
-        //         {
-        //             // set the target to the new ball
-        //             targetTemporary = ball.transform;
-        //         }  
-        //     }
-        //     target = targetTemporary;
-        // }
+        // if target is null or 
+        if(target == null){
+            target = DetectAndChangeTarget();
+        }
 
-        // // if the agent touched the target delete the target
-        // if (target != null && Vector3.Distance(agentPosition, target.transform.position) < 2)
-        // {
+        // if the agent touched the target delete the target
+        if (target != null && Vector3.Distance(agent.transform.position, target.transform.position) < 2)
+        {
             
-        //     Destroy(target.gameObject);
-        //     target = null;
-        // }
+            Destroy(target.gameObject);
+            target = null;
+        }
 
     }
 
-    private Transform DetectAndChangeTarget(Vector3 agentPosition)
+    private Transform DetectAndChangeTarget()
     {
         // select all tag "Balls"
         GameObject[] balls = GameObject.FindGameObjectsWithTag("Balls");
+        // select agent
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
         Vector3 targetPosition;
+        Transform targetTemporary = null;
         
         // for each ball in the array
         foreach (GameObject ball in balls)
         {
             // get the ball position
             targetPosition = ball.transform.position;
-            float distance = Vector3.Distance(targetPosition, agentPosition);
+            float distance = Vector3.Distance(targetPosition, agent.transform.position);
             if (targetTemporary == null){
                 targetTemporary = ball.transform;
             }
             // if the ball is closer than the current target
-            if ( targetTemporary != null && (Vector3.Distance(agentPosition, targetTemporary.transform.position) > distance))
+            if ( targetTemporary != null && (Vector3.Distance(agent.transform.position, targetTemporary.transform.position) > distance))
             {
                 // set the target to the new ball
                 targetTemporary = ball.transform;
             }
         }
-
         return targetTemporary;
     }
 
-
-
-    // private void OnCollisionEnter(Collision collision)
-    // {
-    //     if (collision.gameObject.tag == "Prof")
-    //     {
-    //         Anim.SetBool("Idle", true);
-    //     }
-    // }
-    // private void OnCollisionExit(Collision collision)
-    // {
-    //     if (collision.gameObject.tag == "Prof")
-    //     {
-    //         Anim.SetBool("Idle", false);
-    //     }
-    // }
 }
