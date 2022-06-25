@@ -22,23 +22,25 @@ public class AgentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if target is not null change the agent's destination to the target's position
-        if (target != null){
-            agent.destination = target.position;
-        }
-        
-        // if target is null or 
-        if(target == null){
-            target = DetectAndChangeTarget();
+        if(Anim.GetBool("Death") == false)
+        {
+            // if target is not null change the agent's destination to the target's position
+            if (target != null){
+                agent.destination = target.position;
+            }
+            
+            // if target is null or 
+            if(target == null){
+                target = DetectAndChangeTarget();
+            }
         }
 
-        // // if the agent touched the target delete the target
-        // if (target != null && Vector3.Distance(agent.transform.position, target.transform.position) < 2)
-        // {
-            
-        //     Destroy(target.gameObject);
-        //     target = null;
-        // }
+        // if press K change Death bool to true
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Anim.SetBool("Death", true);
+            agent.enabled = false;
+        }
 
     }
 

@@ -14,6 +14,7 @@ public class WinLoseDisplay : MonoBehaviour
     private int CountAllBalls;
     private int BallsCollected = 0;
 
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -82,8 +83,8 @@ public class WinLoseDisplay : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
     
-    public void Restart()
+    public void Restart(string name)
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(name);
     }
 }

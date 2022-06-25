@@ -194,8 +194,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Ramasser le plus de billes avant l'IA. Lorsque plus aucune bille n'est
-    pr\xE9sente c'est la fin."
+  m_Text: "Ramasser le plus de billes avant l'ennemie. Lorsque plus aucune bille
+    n'est pr\xE9sente c'est la fin. SI vous avez moins de la moiti\xE9 c'est PERDU
+    !!"
 --- !u!222 &59076813
 CanvasRenderer:
   m_ObjectHideFlags: 0

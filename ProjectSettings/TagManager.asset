@@ -8,6 +8,7 @@ TagManager:
   - Fire
   - Balls
   - Me
+  - Ennemy
   layers:
   - Default
   - TransparentFX
