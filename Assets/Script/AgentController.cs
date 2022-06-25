@@ -32,14 +32,30 @@ public class AgentController : MonoBehaviour
             target = DetectAndChangeTarget();
         }
 
-        // if the agent touched the target delete the target
-        if (target != null && Vector3.Distance(agent.transform.position, target.transform.position) < 2)
-        {
+        // // if the agent touched the target delete the target
+        // if (target != null && Vector3.Distance(agent.transform.position, target.transform.position) < 2)
+        // {
             
-            Destroy(target.gameObject);
-            target = null;
-        }
+        //     Destroy(target.gameObject);
+        //     target = null;
+        // }
 
+    }
+
+
+     void OnCollisionEnter(Collision other)
+    {
+
+            switch (other.gameObject.tag)
+            {
+                case "Balls":
+                    Destroy(other.gameObject);
+                    target = null;
+                    break;
+                default:
+                    Debug.Log("rien");
+                    break;
+            }
     }
 
     private Transform DetectAndChangeTarget()

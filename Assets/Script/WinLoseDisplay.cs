@@ -60,7 +60,21 @@ public class WinLoseDisplay : MonoBehaviour
         
     }
 
-
+    void OnCollisionEnter(Collision other)
+    {
+            switch (other.gameObject.tag)
+            {
+                case "Balls":
+                    // incremente BallsCollected
+                    BallsCollected++;
+                    DisplayBalls.GetComponent<UnityEngine.UI.Text>().text = BallsCollected.ToString() + "/" + CountAllBalls.ToString();
+                    Destroy(other.gameObject);
+                    break;
+                default:
+                    Debug.Log("rien");
+                    break;
+            }
+    }
 
     public void LoadMenu()
     {
