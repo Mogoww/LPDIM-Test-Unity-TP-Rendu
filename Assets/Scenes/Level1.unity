@@ -897,7 +897,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0261347, y: 1}
+    m_SensorSize: {x: 2.0206327, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2310,7 +2310,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256957304}
         m_TargetAssemblyTypeName: WinLoseDisplay, Assembly-CSharp
-        m_MethodName: LoadMenu
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3418,7 +3418,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0261347, y: 1}
+    m_SensorSize: {x: 2.0206327, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4394,7 +4394,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0261347, y: 1}
+    m_SensorSize: {x: 2.0206327, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -7536,7 +7536,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0261347, y: 1}
+    m_SensorSize: {x: 2.0206327, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8576,7 +8576,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 256957304}
         m_TargetAssemblyTypeName: WinLoseDisplay, Assembly-CSharp
-        m_MethodName: LoadMenu
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14159,7 +14159,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1018524068}
         m_TargetAssemblyTypeName: MenuCustom, Assembly-CSharp
-        m_MethodName: GoToMenu
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14513,7 +14513,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0261347, y: 1}
+    m_SensorSize: {x: 2.0206327, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

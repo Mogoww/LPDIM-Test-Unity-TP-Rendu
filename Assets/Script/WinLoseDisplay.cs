@@ -76,14 +76,14 @@ public class WinLoseDisplay : MonoBehaviour
             }
     }
 
-    public void LoadMenu()
+    public void Menu()
     {
         // load pause menu scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");
     }
     
     public void Restart()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level1");
     }
 }

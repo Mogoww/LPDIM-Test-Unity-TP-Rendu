@@ -41,21 +41,26 @@ public class MenuCustom : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void GoToMenu()
+    public void Menu()
     {
         Time.timeScale = 1f;
         GameIsPaused = false;
         SceneManager.LoadScene("Menu");
     }
 
-    public void GoToGame()
+    public void PlayGame(string name)
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(name);
     }
 
-    public void GoToInformation()
+    public void Information()
     {
         SceneManager.LoadScene("Information");
+    }
+
+    public void LevelChoix()
+    {
+        SceneManager.LoadScene("LevelChoix");
     }
 
     public void QuitGame()
