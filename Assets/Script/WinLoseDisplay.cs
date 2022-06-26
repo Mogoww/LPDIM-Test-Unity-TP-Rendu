@@ -87,4 +87,9 @@ public class WinLoseDisplay : MonoBehaviour
     {
         SceneManager.LoadScene(name);
     }
+
+    public void LevelChoice()
+    {
+        SceneManager.LoadScene("LevelChoix");
+    }
 }
